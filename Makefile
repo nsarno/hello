@@ -9,14 +9,17 @@ build:
 	docker build -t $(IMAGE) .
 
 run:
-	docker run -p $(PORT):4000 --rm -it $(IMAGE)
+	docker run -p $(PORT):4000 -it $(IMAGE)
 
 .PHONY: test
 test:
-	docker run -e "MIX_ENV=test" --rm -it $(IMAGE) bash -c "mix test 1>&1"
+	docker run -e "MIX_ENV=test" -it $(IMAGE) script/test.sh
 
 console:
-	docker run -p $(PORT):4000 --rm -it $(IMAGE) iex -S mix phoenix.server
+	docker run -p $(PORT):4000 -it $(IMAGE) iex -S mix phoenix.server
+
+shell:
+	docker run -p $(PORT):4000 -it $(IMAGE) bash
 
 tag: 
 	docker tag $(IMAGE) $(IMAGE):$(TAG)
