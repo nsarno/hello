@@ -12,7 +12,7 @@ run:
 	docker run -p $(PORT):4000 -it $(IMAGE)
 
 test:
-	docker run -e "MIX_ENV=test" -it $(IMAGE) mix test 1>&1
+	docker run -e "MIX_ENV=test" -it $(IMAGE) bash -c "mix test 1>&1"
 
 iex:
 	docker run -p $(PORT):4000 -it $(IMAGE) iex -S mix phoenix.server
