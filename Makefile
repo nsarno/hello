@@ -11,6 +11,10 @@ build:
 run:
 	docker run -p $(PORT):4000 --rm -it $(IMAGE)
 
+.PHONY: test
+test:
+	docker run -e "MIX_ENV=test" --rm -it $(IMAGE) bash -c "mix test 1>&1"
+
 console:
 	docker run -p $(PORT):4000 --rm -it $(IMAGE) iex -S mix phoenix.server
 
