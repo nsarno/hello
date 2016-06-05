@@ -1,18 +1,19 @@
 # Hello
 
-To start your Phoenix app:
+## Getting Started with the app
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phoenix.server`
+- Build the docker image: `make build`
+- Run the docker container: `make run`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Test the application `http://localhost:4000/api/hello`
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+- Tag the image: `make tag`
+- Push the image: `make push`
 
-## Learn more
+## Getting Started with ECS
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+- Create a cluster: `make cluster`
+- Create a task definition: `make task-definition`
+- Create a service: `make service`
+- Create the ecs instance role: `make ecs-instance-role`
+- Launch the EC2 instance associated with the cluster: `make launch-instance`
