@@ -1,7 +1,7 @@
 PROJECT = hello
 IMAGE = nsarno/$(PROJECT)
 PORT = 4000
-TAG = v1
+TAG = v2
 
 $(PROJECT): build run
 
