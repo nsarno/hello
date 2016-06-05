@@ -39,4 +39,15 @@ ecs-instance-role:
 
 launch-instance:
 	aws ec2 run-instances \
-		--cli-input-json file://aws_config/ec2_instance_definition.json
+		--cli-input-json file://aws_config/ec2_instance_definition.json \
+		--user-data file://aws_config/instance_user_data.json
+
+cw-policy:
+	aws iam create-policy \
+		--policy-name ECS-CloudWatchLogs \
+		--policy-document file://aws_config/cw_policy.json
+
+attach-cw-role-policy:
+	aws iam attach-role-policy \
+		--role-name ecsInstanceRole \
+		--policy-arn arn:aws:iam::290114975187:policy/ECS-CloudWatchLogs

@@ -1,6 +1,5 @@
 {
   "ImageId": "ami-8f7687e2", 
-  "UserData": "IyEvYmluL2Jhc2gKZWNobyBFQ1NfQ0xVU1RFUj1oZWxsby1jbHVzdGVyID4+IC9ldGMvZWNzL2Vjcy5jb25maWcK",
   "InstanceType": "t2.micro",
   "Monitoring": {
     "Enabled": true
