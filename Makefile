@@ -20,6 +20,11 @@ tag:
 push:
 	docker push $(IMAGE)
 
+log-group:
+	aws logs create-log-group \
+		--log-group-name awslogs-hello \
+		--region us-east-1
+
 cluster:
 	aws ecs create-cluster \
 		--cli-input-json file://aws_config/cluster_definition.json

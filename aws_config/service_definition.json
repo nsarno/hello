@@ -1,7 +1,7 @@
 {
   "cluster": "hello-cluster",
-  "serviceName": "hello-service", 
-  "taskDefinition": "hello", 
-  "desiredCount": 1, 
+  "serviceName": "hello-service",
+  "taskDefinition": "hello:2",
+  "desiredCount": 1,
   "clientToken": "ZHJlYW1jYXRjaGVyCg=="
 }
