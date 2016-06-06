@@ -7,13 +7,14 @@
 
 Test the application `http://localhost:4000/api/hello`
 
+## Continuous deploy
+
+Pushing to `master` will trigger the buildkite pipeline reponsible to build image, run the tests and
+push the image to Docker Hub.
+
+TODO: Setup continuous deployment from Docker Hub to Docker Cloud
+
+## Manual deploy
+
 - Tag the image: `make tag`
 - Push the image: `make push`
-
-## Getting Started with ECS
-
-- Create a cluster: `make cluster`
-- Create a task definition: `make task-definition`
-- Create a service: `make service`
-- Create the ecs instance role: `make ecs-instance-role`
-- Launch the EC2 instance associated with the cluster: `make launch-instance`
